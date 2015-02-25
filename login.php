@@ -54,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			}
 			else {
 				$_SESSION['login'] = "";
-				header ("Location: signup.php");
 			}	
 		}
 		else {
@@ -71,30 +70,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
-
+// Include our styles, imports, etc... 
+require('header/header.php');
 ?>
-
-
-<html>
-<head>
-	<title>Login</title>
-</head>
 <body>
-
-	<FORM NAME ="form1" METHOD ="POST" ACTION ="login.php">
-
-		Username: <INPUT TYPE = 'TEXT' Name ='username' value="" maxlength="20">
-		Password: <INPUT TYPE = 'TEXT' Name ='password' value="" maxlength="16">
-
-		<p align = center>
-			<INPUT TYPE = "Submit" Name = "Submit1"  VALUE = "Login">
-		</p>
-
-	</FORM>
-
-	<p>
-	
+	<div class="login">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Login</h3>
+			  </div>
+			  <div class="panel-body">
+			    <FORM NAME ="form1" METHOD ="POST" ACTION ="login.php">
+					Username: <INPUT TYPE = 'TEXT' Name ='username' value="" maxlength="20">
+					Password: <INPUT TYPE = 'TEXT' Name ='password' value="" maxlength="20">
+					<p align = center>
+						<INPUT TYPE = "Submit" Name = "Submit1"  VALUE = "Login">
+					</p>
+				</FORM>
+			</div>			
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	</div>
 	<?php print $errorMessage;?>
-
 </body>
-</html>

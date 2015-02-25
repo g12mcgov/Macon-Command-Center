@@ -4,12 +4,11 @@
 	if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 		header ("Location: login.php");
 	}
-
 ?>
 
 <html>
  <head>
-  <title>PHP Test</title>
+  <title></title>
  </head>
  <body>
  <?php echo '<p> Dashboard </p>'; ?> 
