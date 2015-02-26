@@ -77,19 +77,17 @@ require('header/header.php');
 	<div class="login">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
-			<div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">Login</h3>
+			<form NAME ="form1" METHOD ="POST" ACTION ="login.php">
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">Username</label>
+			    <input type="text" name="username" value="" class="form-control" id="exampleInputEmail1" maxlength="20">
 			  </div>
-			  <div class="panel-body">
-			    <FORM NAME ="form1" METHOD ="POST" ACTION ="login.php">
-					Username: <INPUT TYPE = 'TEXT' Name ='username' value="" maxlength="20">
-					Password: <INPUT TYPE = 'TEXT' Name ='password' value="" maxlength="20">
-					<p align = center>
-						<INPUT TYPE = "Submit" Name = "Submit1"  VALUE = "Login">
-					</p>
-				</FORM>
-			</div>			
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Password</label>
+			    <input type="password" name="password" value="" class="form-control" id="exampleInputPassword1" maxlength="20">
+			  </div>
+			  <input type="submit" name="Submit1" value="Login">
+			</form>			
 		</div>
 		<div class="col-md-4"></div>
 	</div>
