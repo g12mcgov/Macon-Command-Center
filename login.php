@@ -73,24 +73,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Include our styles, imports, etc... 
 require('header/header.php');
 ?>
-<body>
 	<div class="login">
-		<div class="col-md-4"></div>
-		<div class="col-md-4">
-			<form NAME ="form1" METHOD ="POST" ACTION ="login.php">
-			  <div class="form-group">
-			    <label for="exampleInputEmail1">Username</label>
-			    <input type="text" name="username" value="" class="form-control" id="exampleInputEmail1" maxlength="20">
-			  </div>
-			  <div class="form-group">
-			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" name="password" value="" class="form-control" id="exampleInputPassword1" maxlength="20">
-			  </div>
-			  <input type="submit" name="Submit1" value="Login">
-			</form>			
+		<div class="container">
+		
+			<div class="row">
+				<div class="col-md-4"></div>
+
+				<div class="col-md-4">
+					<form name="form1" method="POST" action="login.php">
+						<h1><b>Command Center</b></h1>
+						  <div class="form-group">
+						    <input type="text" name="username" value="" class="form-control" id="exampleInputEmail1" maxlength="20" placeholder="Username">
+						  </div>
+						  <div class="form-group">
+						    <input type="password" name="password" value="" class="form-control" id="exampleInputPassword1" maxlength="20" placeholder="Password">
+						  </div>
+						  <input class="button" type="submit" name="Submit1" value="Login">
+					</form>			
+				</div>
+
+				<div class="col-md-4"></div>
+
+			</div>
+
 		</div>
-		<div class="col-md-4"></div>
+
 	</div>
-	</div>
+	
 	<?php print $errorMessage;?>
-</body>
