@@ -39,7 +39,6 @@ function ping($host, $port, $timeout) {
 				else {
 					loadText.innerHTML += ".";
 					count += 1;
-					console.log(count);
 				}	
 			}, 1000);
 		});
