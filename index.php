@@ -9,7 +9,7 @@ require('header/header.php');
 
 <html>
 <head>
-	<title>Command Center</title>
+	<title>Macon Command Center</title>
 </head>
 <body>
 	<div class="nav">
@@ -20,11 +20,25 @@ require('header/header.php');
 		        <img alt="Brand" src="img/logo.png">
 		      </a>
 		    </div>
+		    <ul class="nav navbar-nav navbar-left">
+		    	<h2 class="navbar-text" style="font-family: 'Audiowide', cursive;">Macon Command Center</h2> 
+		    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+        	<li><a href="connections.php">Connections</a></li>
+        	<li><a href="logout.php">Logout</a></li>
+        </ul>
 		  </div>
 		</nav>
 	</div>
 	<div class="header">
-		<h1><b>Command Center</b></h1>
+		<h3 id="date"><b></b></h3>
+		<script>
+			$(document).ready(function() {
+				setInterval(function(){
+				  $("#date").text(moment().format('h:mma MMMM, Do YYYY'));
+				},1000);
+			});
+		</script>	
 		<hr>
 	</div>
 	<div class="control">
@@ -42,7 +56,7 @@ require('header/header.php');
 		  <div class="col-md-4">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
-			    <h3 class="panel-title">Air Conditioning</h3>
+			    <h3 class="panel-title">Security Camera</h3>
 			  </div>
 			  <div class="panel-body">
 			    Panel content

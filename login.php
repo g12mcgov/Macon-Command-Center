@@ -1,5 +1,7 @@
 <?php session_start();
 
+error_reporting(E_ERROR);
+
 ob_start();
 
 $uname = "";
@@ -45,7 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		$num_rows = mysql_num_rows($ACCREDITED);
 
-		if ($num_rows > 0) { print "Authenticated"; }
+		if ($num_rows > 0) { 
+			print "Authenticated"; 
+		}
 
 		if ($ACCREDITED) {
 			if ($num_rows > 0) {
@@ -63,13 +67,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	mysql_close($db_handle);
 
 	}
-
 	else {
-		$errorMessage = "Error logging on";
+		$errorMessage = "Failed to Establish Database Connection";
 	}
-
 }
-
+	
 // Include our styles, imports, etc... 
 require('header/header.php');
 ?>
@@ -81,7 +83,7 @@ require('header/header.php');
 
 				<div class="col-md-4">
 					<form name="form1" method="POST" action="login.php">
-						<h1><b>Command Center</b></h1>
+						<h1><b>Macon Command Center</b></h1>
 						  <div class="form-group">
 						    <input type="text" name="username" value="" class="form-control" id="exampleInputEmail1" maxlength="20" placeholder="Username">
 						  </div>
@@ -89,7 +91,8 @@ require('header/header.php');
 						    <input type="password" name="password" value="" class="form-control" id="exampleInputPassword1" maxlength="20" placeholder="Password">
 						  </div>
 						  <input class="button" type="submit" name="Submit1" value="Login">
-					</form>			
+					</form>	
+					<p style="margin-top:5px;"> <?php if($errorMessage) { echo $errorMessage; } ?> </p>		
 				</div>
 
 				<div class="col-md-4"></div>
@@ -99,5 +102,4 @@ require('header/header.php');
 		</div>
 
 	</div>
-	
-	<?php print $errorMessage;?>
+

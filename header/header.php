@@ -17,6 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 
+    <!-- Local Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Bootstrap Includes / JQuery -->
@@ -27,5 +28,8 @@
 
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Audiowide|Share+Tech+Mono' rel='stylesheet' type='text/css'>
+
+	<!-- Local JS -->
+	<script type="text/javascript" src="js/moment.min.js"></script>
 </head>
 </html>
