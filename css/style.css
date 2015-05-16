@@ -1,0 +1,115 @@
+/*
+*
+*	Author: Grant McGovern
+*	Date: 25 Feb 2015
+*
+*
+*
+*
+*/
+
+/***** LOGIN PAGE ******/
+.login {
+	margin-top: 120px;
+}
+
+.login form {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 2px solid;
+	border-color: black;
+	border-radius: 20px;
+}
+
+.login h1 {
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Audiowide', cursive;
+	padding-bottom: 17px;
+	/*font-family: 'Share Tech Mono', ;*/
+}
+
+.login h3 {
+	font-size: 40px;
+}
+
+.login p {
+	color: red;
+	text-align: center;
+}
+
+.login .button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+/* Override Bootstrap and align text input boxes */
+.login .form-group {
+	margin: 0 auto;
+	width: 200px;
+	padding-bottom: 7px;
+}
+
+/***** LOGOUT PAGE *****/
+.logout h1 {
+	text-align: center;
+	font-size: 22px;
+}
+
+.logout p {
+	text-align: center;
+}
+
+/***** INDEX PAGE ******/
+.nav {
+	/* */ 
+}
+
+.nav img {
+	width: 25px;
+}
+
+.header {
+	/* */
+}
+
+.header h1 {
+	text-align: center;
+	font-family: 'Audiowide', cursive;
+	font-size: 60px;
+}
+
+.header h2 {
+	font-family: 'Audiowide', cursive;
+	font-size: 60px;
+}
+
+.header hr {
+	width: 50%;
+}
+
+.control {
+	text-align: center;
+}
+
+.control .panel {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#date {
+	text-align: center;
+}
+
+/****** BOOTSTRAP OVERRIDES *******/
+.navbar-collapse {
+  text-align: center;
+}
+
+.navbar-nav {
+    display: inline-block;
+    float: none;
+}
