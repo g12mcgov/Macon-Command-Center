@@ -30,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$uname = htmlspecialchars($uname);
 	$pword = htmlspecialchars($pword);
 
-	// Connect to the local dateabase 
-	$user_name = "root";
-	$pass_word = "nantucket";
-	$database = "dashboard";
-	$server = "127.0.0.1";
+	// Connect to the production ClearDB database
+	$user_name = "b7bdf492597fd9";
+	$pass_word = "6b44c078";
+	$database = "heroku_1fd6a6b63ed5496";
+	$server = "us-cdbr-iron-east-02.cleardb.net";
 
 	$db_handle = mysql_connect($server, $user_name, $pass_word);
 	$db_found = mysql_select_db($database, $db_handle);
