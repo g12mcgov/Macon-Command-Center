@@ -12,6 +12,9 @@
 	~ Designed in this way so one file for everything ~
 -->
 <head>
+	<!-- Load Favicon of Beer -->
+	<link rel="shortcut icon" href="favicon.ico"/>
+
 	<title>Command Center</title>
 	<!-- Bootstrap / Mobile Scalability -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
