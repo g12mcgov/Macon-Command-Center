@@ -27,7 +27,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Audiowide|Share+Tech+Mono' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Audiowide|Share+Tech+Mono' rel='stylesheet' type='text/css'>
 
 	<!-- Local JS -->
 	<script type="text/javascript" src="js/moment.min.js"></script>
