@@ -2,6 +2,5 @@
   "require" : {
   },
   "require-dev": {
-    "heroku/heroku-buildpack-php": "https://github.com/heroku/heroku-buildpack-php.git#legacy"
   }
 }
