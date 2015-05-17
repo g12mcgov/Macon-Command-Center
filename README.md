@@ -1,4 +1,4 @@
-# Macon-Command-Center
+# :beer: Macon-Command-Center
 
 Login:
 
