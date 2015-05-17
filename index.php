@@ -49,30 +49,50 @@ require('header/header.php');
 		  <div class="col-md-4">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
-			    <h3 class="panel-title">Lights</h3>
+			    <h3 class="panel-title"><b>Lights</b></h3>
 			  </div>
 			  <div class="panel-body">
-			    Panel content
+			  	<div class="ColorPicker">
+			  		<p>Phillips Hue</p>
+					<div id="cpDiv2" style="display:inline-block;"></div> 
+				</div>
+				<script>
+					$(document).ready(function(){
+						$('#cpDiv2').colorpicker({color:'#31859b', defaultPalette:'web'});
+					});
+				</script>
 			  </div>
 			</div>
 		  </div>
 		  <div class="col-md-4">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
-			    <h3 class="panel-title">Security Camera</h3>
+			    <h3 class="panel-title"><b>Security Camera</b></h3>
 			  </div>
 			  <div class="panel-body">
-			    Panel content
+			  	<p>Grant's Room</p>
+			  	<div id="securityCameraFootage"></div>
 			  </div>
 			</div>
 		  </div>
 		  <div class="col-md-4">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
-			    <h3 class="panel-title">Blinds</h3>
+			    <h3 class="panel-title"><b>Blinds</b></h3>
 			  </div>
 			  <div class="panel-body">
-			    Panel content
+			  	<div class="blind-switches">
+			  		<p>Backyard Blinds</p>
+			  		<input type="checkbox" name="backyard-blinds" data-off-text="Closed" data-on-text="Opened" checked>
+			    	<p>Side Blinds</p>
+			    	<input type="checkbox" name="side-blinds" data-off-text="Closed" data-on-text="Opened" checked>
+			  		</div>
+			    <script>
+			    	$(document).ready(function(){
+			    		$("[name='backyard-blinds']").bootstrapSwitch();
+			    		$("[name='side-blinds']").bootstrapSwitch();
+			    	});
+			    </script>
 			  </div>
 			</div>
 		  </div>

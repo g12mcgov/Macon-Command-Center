@@ -113,11 +113,29 @@
 	margin-right: 20px;
 }
 
+.blind-switches p {
+	margin-top: 20px;
+}
+
 #date {
 	text-align: center;
 }
 
+#securityCameraFootage {
+	width: 300px;
+  	height: 400px;
+  	background-image: url("../img/security-camera-demo.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+}
+
 /****** BOOTSTRAP OVERRIDES *******/
+
+.panel {
+	height: 350px;
+}
+
 .navbar-collapse {
   text-align: center;
 }
@@ -128,12 +146,12 @@
 }
 
 /* Overide Bootstrap Rounded Edges */
-.nav .navbar .navbar-inverse {
+.nav .navbar-nav .navbar .navbar-inverse .navbar-nav {
   border-radius: 0 !important;
 }
 
 
-/* Mobile styles */
+/* Mobile Adjustment */
 @media only screen and (max-width: 480px) {
     .nav h2 {
         font-size: 18px;

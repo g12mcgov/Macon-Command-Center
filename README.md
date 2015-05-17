@@ -1,6 +1,12 @@
 # Macon-Command-Center
 
-![preview](http://i1158.photobucket.com/albums/p618/g12mcgov/Screenshot%202015-05-15%2023.27.34.png)
+Login:
+
+![preview-login](http://i1158.photobucket.com/albums/p618/g12mcgov/Screenshot%202015-05-15%2023.27.34.png)
+
+Dashboard:
+
+![preview-dashboard](http://i1158.photobucket.com/albums/p618/g12mcgov/Screenshot%202015-05-17%2016.42.27.png)
 
 Soon to be a dashboard to serve as an interface between my Raspberry Pi Security Camera, the lighting, air conditioning, and blinds in the Macon House (my house) for us to use Senior Year.
 

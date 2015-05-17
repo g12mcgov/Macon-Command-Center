@@ -52,7 +52,7 @@ function ping($host, $port, $timeout) {
 			echo "<p><b>Port:</b> $raspberry_pi_port</p>";
 		}
 		else {
-			echo "<p style='color:red;'>Could not Establish Connection</p>";
+			echo "<p>Could not Establish Connection</p>";
 		}
 	?>
 	</div>
