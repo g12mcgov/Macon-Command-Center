@@ -128,7 +128,7 @@
 }
 
 /* Overide Bootstrap Rounded Edges */
-* {
+.nav .navbar .navbar-inverse {
   border-radius: 0 !important;
 }
 
