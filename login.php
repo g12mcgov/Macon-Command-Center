@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// Connect to the production ClearDB database
 	$user_name = "b7bdf492597fd9";
-	$pass_word = "";
+	$pass_word = "6b44c078";
 	$database = "heroku_1fd6a6b63ed5496";
 	$server = "us-cdbr-iron-east-02.cleardb.net";
 
