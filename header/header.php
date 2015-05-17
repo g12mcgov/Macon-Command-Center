@@ -34,5 +34,6 @@
 
 	<!-- Local JS -->
 	<script type="text/javascript" src="js/moment.min.js"></script>
+	<script type="text/javascript" src="js/FlowType/flowtype.js"></script>
 </head>
 </html>

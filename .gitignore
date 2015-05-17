@@ -1,3 +1,8 @@
 # Config #
 ##########
 *.cfg
+
+SSL Certificate
+*.csr
+*.crt
+*.key

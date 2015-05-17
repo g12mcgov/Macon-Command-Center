@@ -1,9 +1,11 @@
 <?php 
 	session_start();
 	
+	// If not logged in, redirect to login page.
 	if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-		header ("Location: login.php");
+		header("Location: login.php");
 	}
+
 require('header/header.php');
 ?>
 
@@ -13,20 +15,21 @@ require('header/header.php');
 </head>
 <body>
 	<div class="nav">
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse" id="primaryNavbar">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <a class="navbar-brand" href="#">
 		        <img alt="Brand" src="img/logo.png">
 		      </a>
+		      <h2 class="nav navbar-text">Macon Command Center</h2> 
 		    </div>
-		    <ul class="nav navbar-nav navbar-left">
-		    	<h2 class="navbar-text" style="font-family: 'Audiowide', cursive;">Macon Command Center</h2> 
-		    </ul>
-		    <ul class="nav navbar-nav navbar-right">
-        	<li><a href="connections.php">Connections</a></li>
-        	<li><a href="logout.php">Logout</a></li>
-        </ul>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse">
+			    <ul class="nav navbar-nav navbar-right">
+	        	<li><a href="connections.php">Connections</a></li>
+	        	<li><a href="logout.php">Logout</a></li>
+	        	</ul>
+	        </div>
 		  </div>
 		</nav>
 	</div>
