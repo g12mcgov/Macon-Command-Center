@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Connect to the production ClearDB database
 	$user_name = "b7bdf492597fd9";
 	$pass_word = "6b44c078";
-	$database = "heroku_1fd6a6b63ed5496";
+	$database = "";
 	$server = "us-cdbr-iron-east-02.cleardb.net";
 
 	$db_handle = mysql_connect($server, $user_name, $pass_word);
