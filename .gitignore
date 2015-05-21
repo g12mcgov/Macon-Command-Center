@@ -2,7 +2,8 @@
 ##########
 *.cfg
 
-SSL Certificate
+# SSL Certificate #
+###################
 *.csr
 *.crt
 *.key
