@@ -4,14 +4,12 @@
 
 ob_start();
 
-//h
-
 $uname = "";
 $pword = "";
 $errorMessage = "";
 
 function quote_smart($value, $handle) {
-
+	
    if (get_magic_quotes_gpc()) {
        $value = stripslashes($value);
    }
@@ -23,7 +21,7 @@ function quote_smart($value, $handle) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	
+	// Login credentials
 	$uname = $_POST['username'];
 	$pword = $_POST['password'];
 
@@ -32,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// Connect to the production ClearDB database
 	$user_name = "b7bdf492597fd9";
-	$pass_word = "6b44c078";
+	$pass_word = "";
 	$database = "heroku_1fd6a6b63ed5496";
 	$server = "us-cdbr-iron-east-02.cleardb.net";
 
@@ -49,21 +47,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		$num_rows = mysql_num_rows($ACCREDITED);
 
-		// if ($num_rows > 0) { 
-		// 	print "Authenticated"; 
-		// }
-
 		if ($ACCREDITED) {
 			if ($num_rows > 0) {
 				$_SESSION['login'] = "1";
+				$_SESSION['user'] = $uname;
+
 				header("Location: index.php");
 			}
 			else {
 				$_SESSION['login'] = "";
+				$errorMessage = "Invalid Password";
 			}	
 		}
 		else {
-			$errorMessage = "Error logging on";
+			$errorMessage = "Invalid Password";
 		}
 
 	mysql_close($db_handle);

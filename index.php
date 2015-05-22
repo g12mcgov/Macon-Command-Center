@@ -12,7 +12,7 @@ require('header/header.php');
 <html>
 <body>
 	<div class="nav">
-		<nav class="navbar navbar-inverse" id="primaryNavbar">
+		<nav class="navbar navbar-inverse navbar-static-top" id="primaryNavbar">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <a class="navbar-brand" href="#">
@@ -23,6 +23,7 @@ require('header/header.php');
 		    <!-- Collect the nav links, forms, and other content for toggling -->
     		<div class="collapse navbar-collapse">
 			    <ul class="nav navbar-nav navbar-right">
+			    <p class="nav navbar-text">Welcome, <i><?php echo str_replace("'", "", $_SESSION['user']); ?></i></p>
 	        	<li><a href="connections.php">Connections</a></li>
 	        	<li><a href="logout.php">Logout</a></li>
 	        	</ul>
@@ -51,16 +52,15 @@ require('header/header.php');
 			  <div class="panel-body">
 			  	<div class="ColorPicker">
 			  		<p>Phillips Hue</p>
-					<div id="cpDiv2" style="display:inline-block;"></div>
-					<div class="light-switch">
-						<p>State</p>
-				  		<input type="checkbox" name="light" data-off-text="Off" data-on-text="On" checked>
+			  		<div class="light-switch">
+				  		<input type="checkbox" id="light" data-off-text="Off" data-on-text="On" checked>
 				  	</div>
+					<div id="cpDiv2" style="display:inline-block;"></div>
 				</div>
 				<script>
 					$(document).ready(function(){
 						$('#cpDiv2').colorpicker({color:'#31859b', defaultPalette:'web'});
-						$("[name='light']").bootstrapSwitch();
+						$('#light').bootstrapSwitch();
 					});
 				</script>
 			  </div>
@@ -85,14 +85,14 @@ require('header/header.php');
 			  <div class="panel-body">
 			  	<div class="blind-switches">
 			  		<p>Backyard Blinds</p>
-			  		<input type="checkbox" name="backyard-blinds" data-off-text="Closed" data-on-text="Opened" checked>
+			  		<input type="checkbox" id="backyard-blinds" data-off-text="Closed" data-on-text="Opened" checked>
 			    	<p>Side Blinds</p>
-			    	<input type="checkbox" name="side-blinds" data-off-text="Closed" data-on-text="Opened" checked>
+			    	<input type="checkbox" id="side-blinds" data-off-text="Closed" data-on-text="Opened" checked>
 			  		</div>
 			    <script>
 			    	$(document).ready(function(){
-			    		$("[name='backyard-blinds']").bootstrapSwitch();
-			    		$("[name='side-blinds']").bootstrapSwitch();
+			    		$('#backyard-blinds').bootstrapSwitch();
+			    		$('#side-blinds').bootstrapSwitch();
 			    	});
 			    </script>
 			  </div>

@@ -41,5 +41,6 @@
 	<script type="text/javascript" src="js/FlowType/flowtype.js"></script>
 	<script type="text/javascript" src="js/evol.colorpicker.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/bootstrap-switch.min.js"></script>
+	<script type="text/javascript" src="js/macon.js"></script>
 </head>
 </html>

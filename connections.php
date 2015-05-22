@@ -3,7 +3,7 @@ session_start();
 
 require("header/header.php");
 
-$raspberry_pi_host = "192.168.1.12";
+$raspberry_pi_host = "192.168.1.8";
 $raspberry_pi_port = 22;
 
 function ping($host, $port, $timeout) {
@@ -22,7 +22,7 @@ function ping($host, $port, $timeout) {
 <html>
 <body>
 	<div class="nav">
-		<nav class="navbar navbar-inverse" id="primaryNavbar">
+		<nav class="navbar navbar-inverse navbar-static-top" id="primaryNavbar">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <a class="navbar-brand" href="index.php">
