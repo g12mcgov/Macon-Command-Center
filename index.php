@@ -10,9 +10,6 @@ require('header/header.php');
 ?>
 
 <html>
-<head>
-	<title>Macon Command Center</title>
-</head>
 <body>
 	<div class="nav">
 		<nav class="navbar navbar-inverse" id="primaryNavbar">
@@ -54,11 +51,16 @@ require('header/header.php');
 			  <div class="panel-body">
 			  	<div class="ColorPicker">
 			  		<p>Phillips Hue</p>
-					<div id="cpDiv2" style="display:inline-block;"></div> 
+					<div id="cpDiv2" style="display:inline-block;"></div>
+					<div class="light-switch">
+						<p>State</p>
+				  		<input type="checkbox" name="light" data-off-text="Off" data-on-text="On" checked>
+				  	</div>
 				</div>
 				<script>
 					$(document).ready(function(){
 						$('#cpDiv2').colorpicker({color:'#31859b', defaultPalette:'web'});
+						$("[name='light']").bootstrapSwitch();
 					});
 				</script>
 			  </div>

@@ -20,11 +20,27 @@ function ping($host, $port, $timeout) {
 ?>
 
 <html>
-<head>
-</head>
 <body>
+	<div class="nav">
+		<nav class="navbar navbar-inverse" id="primaryNavbar">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="index.php">
+		        <img alt="Brand" src="img/logo.png">
+		      </a>
+		      <h2 class="nav navbar-text">Macon Command Center</h2> 
+		    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse">
+			    <ul class="nav navbar-nav navbar-right">
+	        	<li><a href="#">Connections</a></li>
+	        	<li><a href="logout.php">Logout</a></li>
+	        	</ul>
+	        </div>
+		  </div>
+		</nav>
+	</div>
 	<p id="loadtext">Testing Raspberry Pi Connection</p>
-	
 	<script>
 		$(document).ready(function() {
 			var loadText = document.getElementById('loadtext');
@@ -51,7 +67,7 @@ function ping($host, $port, $timeout) {
 			echo "<p><b>Port:</b> $raspberry_pi_port</p>";
 		}
 		else {
-			echo "<p>Could not Establish Connection</p>";
+			echo "<p style='color:red;'>Could not Establish Connection</p>";
 		}
 	?>
 	</div>

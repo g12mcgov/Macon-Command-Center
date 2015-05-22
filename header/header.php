@@ -12,7 +12,7 @@
 	~ Designed in this way so one file for everything ~
 -->
 <head>
-	<!-- Load Favicon of Beer -->
+	<!-- Beer Favicon -->
 	<link rel="shortcut icon" href="favicon.ico"/>
 
 	<title>Macon Command Center</title>
