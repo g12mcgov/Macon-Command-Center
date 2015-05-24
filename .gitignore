@@ -1,6 +1,7 @@
 # Config #
 ##########
 *.cfg
+*.ini
 
 # SSL Certificate #
 ###################
