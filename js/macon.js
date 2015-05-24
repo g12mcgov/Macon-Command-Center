@@ -25,6 +25,8 @@ $(document).ready(function(){
 		},
 	};
 
+	var error_set = false;
+
 	// Execute ajax requests one after the other.
 	$.when(
 		/** Get current light state **/
@@ -93,13 +95,15 @@ $(document).ready(function(){
 	    		dataType: 'JSONP',
 	    		jsonpCallback: 'callback',
 	    		type: 'GET',
-	    		timeout: 10000,
+	    		timeout: 5000,
 	    		error: function(XMLHttpRequest, textStatus, errorThrown) {
 	    			// Append error to the state button
-	    			console.log(errorThrown);
-	    			$(".light-switch").after( 
-	    				"<p style='color:red;'>Error, could not execute command.</p>"
+	    			if(!error_set) {
+	    				$(".light-switch").after( 
+	    					"<p style='color:red;'>Error, could not execute command.</p>"
 	    				);
+	    				error_set = true;
+	    			}
 	    		},
 	    		success: function(data) {
 	        		console.log(data);

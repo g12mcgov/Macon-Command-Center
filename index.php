@@ -52,7 +52,7 @@ require('header/header.php');
 			  <div class="panel-body">
 			  	<div class="ColorPicker">
 			  		<p>Phillips Hue</p>
-			  		<div class="light-switch">
+			  		<div class="light-switch" id="light-switch-id">
 				  		<input type="checkbox" id="light" data-off-text="Off" data-on-text="On" checked>
 				  	</div>
 					<div id="cpDiv2" style="display:inline-block;"></div>
