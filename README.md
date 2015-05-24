@@ -37,15 +37,56 @@ DB Access can be achieved through the Heroku Dashboard.
 Deploying
 =======
 
+<b>Disclaimer</b>: You'll need a running LAMP stack to run this application.
+
 Steps:
 
-1) `$ git add .`
+`$ touch config.ini`
+
+1) First make your own `config.ini` file which looks like this and fill in the necessary parameters.
+
+	[macon-command-center]
+	PRODUCTION=FALSE
+	PRODUCTION_DB_HOST=
+	PRODUCTION_DB_DATABASE=
+	PRODUCTION_DB_USERNAME=
+	PRODUCTION_DB_PASSWORD=
+	DEVELOPMENT_DB_HOST=
+	DEVELOPMENT_DB_DATABASE=
+	DEVELOPMENT_DB_USERNAME=
+	DEVELOPMENT_DB_PASSWORD=
+
+The first value can be set to either <b>TRUE</b>/<b>FALSE</b> to indicate whether to pull production or local (development) database parameters.
+
+2) Then, create a database (I call mine "dashboard") and a table to hold the users. Yeah yeah, I know this isn't secure but this is a localized site.
+
+```sql
+CREATE TABLE `users` (
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+```
+Then, add a username and password to the table.
+
+```sql
+INSERT INTO users (username, password) VALUES ('admin', 'test');
+```
+
+3) Now, navigate to your localhost and you should have a working login screen.
+
+	http://localhost/~grantmcgovern/macon-command-center
 
 
-2) `$ git commit -m 'new_commit_message'`
+Finally, commit your project:
 
 
-3) `$git push heroku master`
+4) `$ git add .`
+
+
+5) `$ git commit -m 'new_commit_message'`
+
+
+6) `$git push heroku master`
 
 
 
