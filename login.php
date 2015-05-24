@@ -1,5 +1,18 @@
 <?php session_start();
+/*
+	!// Macon-Command-Center
 
+	Author: Grant McGovern 
+	Date: 24 May 2015 
+
+	URL: https://github.com/g12mcgov/Macon-Command-Center/blob/master/login.php
+
+	Description:
+
+	~ Provides a login system for the Macon-Command-Center.
+*/
+
+// Turn off errors
 //error_reporting(E_ERROR);
 
 ob_start();
@@ -20,6 +33,9 @@ function quote_smart($value, $handle) {
    return $value;
 }
 
+// Get config info
+$config_parameters = parse_ini_file("config.ini");
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Login credentials
 	$uname = $_POST['username'];
@@ -28,11 +44,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$uname = htmlspecialchars($uname);
 	$pword = htmlspecialchars($pword);
 
-	// Connect to the production ClearDB database
-	$user_name = "b7bdf492597fd9";
-	$pass_word = "";
-	$database = "heroku_1fd6a6b63ed5496";
-	$server = "us-cdbr-iron-east-02.cleardb.net";
+	// If we're running in production
+	if($config_parameters["PRODUCTION"] == "TRUE") {
+		// Production runs on ClearDB remote host.
+		$user_name = $config_parameters["PRODUCTION_DB_USERNAME"];
+		$pass_word = $config_parameters["PRODUCTION_DB_PASSWORD"];
+		$database = $config_parameters["PRODUCTION_DB_DATABASE"];
+		$server = $config_parameters["PRODUCTION_DB_HOST"];
+	}
+	// Otherwise we're in dev mode
+	else {
+		$user_name = $config_parameters["DEVELOPMENT_DB_USERNAME"];
+		$pass_word = $config_parameters["DEVELOPMENT_DB_PASSWORD"];
+		$database = $config_parameters["DEVELOPMENT_DB_DATABASE"];
+		$server = $config_parameters["DEVELOPMENT_DB_HOST"];
+	}
 
 	$db_handle = mysql_connect($server, $user_name, $pass_word);
 	$db_found = mysql_select_db($database, $db_handle);
@@ -70,10 +96,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$errorMessage = "Failed to Establish Database Connection";
 	}
 }
-	
+
 // Include our styles, imports, etc... 
 require('header/header.php');
 ?>
+
+<html>
+<body>
 <div class="login">
 	<div class="container">
 	
@@ -98,4 +127,9 @@ require('header/header.php');
 		</div>
 	</div>
 </div>
+<footer>
+  <p class="text-muted">Made with <span class="redheart" style="font-size:120%; color:red;">&hearts;</span> by<a href="http://www.grantmcgovern.com"> Grant McGovern</a></p>
+</footer>
+</body>
+</html>
 

@@ -1,5 +1,16 @@
-<?php 
-	session_start();
+<?php session_start();
+/*
+	!// Macon-Command-Center
+
+	Author: Grant McGovern 
+	Date: 24 May 2015 
+
+	URL: https://github.com/g12mcgov/Macon-Command-Center/blob/master/index.php
+
+	Description:
+
+	~ The main dashboard (index) page for the Macon-Command-Center.
+*/
 	
 	// If not logged in, redirect to login page.
 	if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
@@ -59,7 +70,8 @@ require('header/header.php');
 				</div>
 				<script>
 					$(document).ready(function(){
-						$('#cpDiv2').colorpicker({color:'#31859b', defaultPalette:'web'});
+						// Default light color to nice white.
+						$('#cpDiv2').colorpicker({color:'#ffffcc', defaultPalette:'web'});
 						$('#light').bootstrapSwitch();
 					});
 				</script>
@@ -100,5 +112,8 @@ require('header/header.php');
 		  </div>
 		</div>
 	</div>
+	<footer>
+  		<p class="text-muted">Made with <span class="redheart" style="font-size:120%; color:red;">&hearts;</span> by<a href="http://www.grantmcgovern.com"> Grant McGovern</a></p>
+	</footer>
 </body>
 </html>

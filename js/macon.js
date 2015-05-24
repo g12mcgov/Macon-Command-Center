@@ -37,7 +37,7 @@ $(document).ready(function(){
 			type: 'GET',
 			timeout: 10000,
 			success: function(res) {
-				if(DEBUG) { console.log("Success", res["state"]) };
+				if(DEBUG) { console.log("Success: ", res["state"]) };
 				dashboard["lights"]["state"] = res["state"];
 				// TODO: Look into deactivating until ajax load is done.
 				// If the recieved state differs from the one displayed, change it.
@@ -48,15 +48,20 @@ $(document).ready(function(){
 		}),
 
 		/** Get current light color **/
-		$.ajax({
-    		url: base_url + '/lights/color',
+    	$.ajax({
+    		url: base_url + '/lights/currentcolor',
     		dataType: 'JSONP',
-    		jsonpCallback: 'callback',
+    		jsonpCallback: 'currentcolor',
     		type: 'GET',
     		timeout: 10000,
     		success: function(res) {
-    			if(DEBUG) console.log("Success", res["color"]);
-    			dashboard["lights"]["color"] = res["color"];
+    			console.log(res);
+    			if(DEBUG) { console.log("Success: ", res["color-hex"]) };
+    			dashboard["lights"]["color"] = res["color-hex"];
+    			// If the recieved light color differs from the one displayed, change it.
+				if(res["color-hex"] != $("#cpDiv2").colorpicker("val")) {
+					$("#cpDiv2").colorpicker("val", res["color-hex"]);
+				}
     		}
     	}),
 
@@ -68,7 +73,9 @@ $(document).ready(function(){
     		type: 'GET',
     		timeout: 10000,
     		success: function(res) {
-    			if(DEBUG) { console.log("Success", res["side"], res["backyard"]) };
+    			if(DEBUG) { console.log(
+    				"Success: ", "(Side): ", res["side"], "(Backyard): ", res["backyard"]
+    				) };
     			dashboard["blinds"]["side"] = res["side"];
     			dashboard["blinds"]["backyard"] = res["backyard"];
     			// If the recieved state differs from the one displayed, change it.
@@ -88,6 +95,23 @@ $(document).ready(function(){
 		/* Listen for change of light state */
 		$('#light').on('switchChange.bootstrapSwitch', function(event, state) {
 			changeLightState(state);
+		});
+
+		/**** Blind Change ****/
+		/* Listen for change of backyard blind position */
+		$('#backyard-blinds').on('switchChange.bootstrapSwitch', function(event, position) {
+			changeBackyardBlindPosition(position);
+		});
+
+		/* Listen for change of side blind position */
+		$('#side-blinds').on('switchChange.bootstrapSwitch', function(event, position) {
+			changeSideBlindPosition(position);
+		});
+
+		/**** Color Change ****/
+		/* Listen for change of light color */
+		$('#cpDiv2').on('change.color', function(event, color) {
+    		changeLightColor(color);
 		});
 
 		var error_set = false;
@@ -115,6 +139,88 @@ $(document).ready(function(){
 	    		}
 			});
 		};
+
+		var error_set = false;
+
+		function changeBackyardBlindPosition(_position) {
+			// Position: (true => open | false => close)
+			position = (_position) ? "open" : "close";
+
+			$.ajax({
+	    		url: base_url + '/blinds/backyard/' + position,
+	    		dataType: 'JSONP',
+	    		jsonpCallback: 'position',
+	    		type: 'GET',
+	    		timeout: 5000,
+	    		error: function(XMLHttpRequest, textStatus, errorThrown) {
+	    			// Append error to the state button
+	    			if(!error_set) {
+	    				$(".blind-switches").after( 
+	    					"<p style='color:red;'>Error, could not execute command for backyard blinds.</p>"
+	    				);
+	    				error_set = true;
+	    			}
+	    		},
+	    		success: function(data) {
+	        		if(DEBUG) { console.log(data) };
+	    		}
+			});
+		};
+
+		var error_set = false;
+
+		function changeSideBlindPosition(_position) {
+			// Position: (true => open | false => close)
+			position = (_position) ? "open" : "close";
+
+			$.ajax({
+	    		url: base_url + '/blinds/side/' + position,
+	    		dataType: 'JSONP',
+	    		jsonpCallback: 'position',
+	    		type: 'GET',
+	    		timeout: 5000,
+	    		error: function(XMLHttpRequest, textStatus, errorThrown) {
+	    			// Append error to the state button
+	    			if(!error_set) {
+	    				$(".blind-switches").after( 
+	    					"<p style='color:red;'>Error, could not execute command for side blinds.</p>"
+	    				);
+	    				error_set = true;
+	    			}
+	    		},
+	    		success: function(data) {
+	        		if(DEBUG) { console.log(data) };
+	    		}
+			});
+		};
+
+		var error_set = false;
+
+		function changeLightColor(_color) {
+			// Escape '#' characters
+			color = _color.replace("#", "%23");
+
+			$.ajax({
+	    		url: base_url + '/lights/' + color,
+	    		dataType: 'JSONP',
+	    		jsonpCallback: 'color',
+	    		type: 'GET',
+	    		timeout: 5000,
+	    		error: function(XMLHttpRequest, textStatus, errorThrown) {
+	    			// Append error to the state button
+	    			if(!error_set) {
+	    				$(".light-switch").after( 
+	    					"<p style='color:red;'>Error, could not execute command.</p>"
+	    				);
+	    				error_set = true;
+	    			}
+	    		},
+	    		success: function(data) {
+	        		if(DEBUG) { console.log(data) };
+	    		}
+			});
+		};
+
     });
 
     /* Helper Conversion Methods */
@@ -127,7 +233,7 @@ $(document).ready(function(){
     };
 
     function convertBlindState(state) {
-    	if (state == "opened")
+    	if (state == "open")
 			return true;
 		else
 			return false;

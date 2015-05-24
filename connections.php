@@ -1,9 +1,20 @@
-<?php 
-session_start();
+<?php session_start();
+/*
+	!// Macon-Command-Center
+	
+	Author: Grant McGovern 
+	Date: 24 May 2015 
+
+	URL: https://github.com/g12mcgov/Macon-Command-Center/blob/master/connections.php
+
+	Description:
+
+	~ Provides a way to test connectivity to Raspberry Pi.
+*/
 
 require("header/header.php");
 
-$raspberry_pi_host = "192.168.1.8";
+$raspberry_pi_host = "192.168.1.13";
 $raspberry_pi_port = 22;
 
 function ping($host, $port, $timeout) {
@@ -71,5 +82,8 @@ function ping($host, $port, $timeout) {
 		}
 	?>
 	</div>
+	<footer>
+  		<p class="text-muted">Made with <span class="redheart" style="font-size:120%; color:red;">&hearts;</span> by<a href="http://www.grantmcgovern.com"> Grant McGovern</a></p>
+	</footer>
 </body>
 </html>

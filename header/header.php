@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- 
+	!// Macon-Command-Center
+	
 	Author: Grant McGovern 
 	Date: 25 Feb 2015 
 
@@ -22,14 +24,14 @@
     <meta charset="utf-8">
 
     <!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Audiowide|Share+Tech+Mono' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Audiowide|Share+Tech+Mono' rel='stylesheet' type='text/css'>
 	
     <!-- Bootstrap Includes / JQuery / JQuery UI-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
 
 	<!-- Local CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
