@@ -85,9 +85,9 @@ require('header/header.php');
 			  <div class="panel-body">
 			  	<div class="blind-switches">
 			  		<p>Backyard Blinds</p>
-			  		<input type="checkbox" id="backyard-blinds" data-off-text="Closed" data-on-text="Opened" checked>
+			  		<input type="checkbox" id="backyard-blinds" data-off-text="Close" data-on-text="Open" checked>
 			    	<p>Side Blinds</p>
-			    	<input type="checkbox" id="side-blinds" data-off-text="Closed" data-on-text="Opened" checked>
+			    	<input type="checkbox" id="side-blinds" data-off-text="Close" data-on-text="Open" checked>
 			  		</div>
 			    <script>
 			    	$(document).ready(function(){
