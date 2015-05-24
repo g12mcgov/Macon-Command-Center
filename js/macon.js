@@ -37,6 +37,7 @@ $(document).ready(function(){
 			type: 'GET',
 			timeout: 10000,
 			success: function(res) {
+				console.log("Success");
 				dashboard["lights"]["state"] = res["state"];
 				// TODO: Look into deactivating until ajax load is done.
 				// If the recieved state differs from the one displayed, change it.
