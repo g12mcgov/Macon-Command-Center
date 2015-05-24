@@ -10,7 +10,7 @@
 */
 
 $(document).ready(function(){
-	var base_url = "//192.168.1.8:5000";
+	var base_url = "//192.168.1.13:5000";
 
 	/**** On page load, get current dashboard values ****/
 	var dashboard = {
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	$.when(
 		/** Get current light state **/
 		$.ajax({
-			url: '//192.168.1.8:5000/lights/state',
+			url: base_url + '/lights/state',
 			dataType: 'JSONP',
 			jsonpCallback: 'color',
 			type: 'GET',
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
 		/** Get current light color **/
 		$.ajax({
-    		url: '//192.168.1.8:5000/lights/color',
+    		url: base_url + '/lights/color',
     		dataType: 'JSONP',
     		jsonpCallback: 'callback',
     		type: 'GET',
@@ -60,7 +60,7 @@ $(document).ready(function(){
 
     	/** Get blind positions for backyard and side **/
 		$.ajax({
-    		url: '//192.168.1.8:5000/blinds/position',
+    		url: base_url + '/blinds/position',
     		dataType: 'JSONP',
     		jsonpCallback: 'position',
     		type: 'GET',
@@ -91,7 +91,7 @@ $(document).ready(function(){
 			state = convertLightState(_state);
 
 			$.ajax({
-	    		url: '//192.168.1.8:5000/lights/state/' + state,
+	    		url: base_url + '/lights/state/' + state,
 	    		dataType: 'JSONP',
 	    		jsonpCallback: 'callback',
 	    		type: 'GET',
