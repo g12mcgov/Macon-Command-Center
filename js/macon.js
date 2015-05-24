@@ -25,7 +25,7 @@ $(document).ready(function(){
 		},
 	};
 
-	var error_set = false;
+	var DEBUG = true;
 
 	// Execute ajax requests one after the other.
 	$.when(
@@ -37,7 +37,7 @@ $(document).ready(function(){
 			type: 'GET',
 			timeout: 10000,
 			success: function(res) {
-				console.log("Success", res["state"]);
+				if(DEBUG) { console.log("Success", res["state"]) };
 				dashboard["lights"]["state"] = res["state"];
 				// TODO: Look into deactivating until ajax load is done.
 				// If the recieved state differs from the one displayed, change it.
@@ -55,7 +55,7 @@ $(document).ready(function(){
     		type: 'GET',
     		timeout: 10000,
     		success: function(res) {
-    			console.log("Success", res["color"]);
+    			if(DEBUG) console.log("Success", res["color"]);
     			dashboard["lights"]["color"] = res["color"];
     		}
     	}),
@@ -68,7 +68,7 @@ $(document).ready(function(){
     		type: 'GET',
     		timeout: 10000,
     		success: function(res) {
-    			console.log("Success", res["side"], res["backyard"]);
+    			if(DEBUG) { console.log("Success", res["side"], res["backyard"]) };
     			dashboard["blinds"]["side"] = res["side"];
     			dashboard["blinds"]["backyard"] = res["backyard"];
     			// If the recieved state differs from the one displayed, change it.
@@ -90,11 +90,13 @@ $(document).ready(function(){
 			changeLightState(state);
 		});
 
+		var error_set = false;
+
 		function changeLightState(_state) {
 			state = convertLightState(_state);
 
 			$.ajax({
-	    		url: base_url + '/lights/state/' + _state,
+	    		url: base_url + '/lights/state/' + state,
 	    		dataType: 'JSONP',
 	    		jsonpCallback: 'callback',
 	    		type: 'GET',
@@ -109,7 +111,7 @@ $(document).ready(function(){
 	    			}
 	    		},
 	    		success: function(data) {
-	        		console.log(data);
+	        		if(DEBUG) { console.log(data) };
 	    		}
 			});
 		};
