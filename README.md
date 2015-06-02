@@ -86,7 +86,7 @@ Finally, commit your project:
 5) `$ git commit -m 'new_commit_message'`
 
 
-6) `$git push heroku master`
+6) `$ git push heroku master`
 
 
 
