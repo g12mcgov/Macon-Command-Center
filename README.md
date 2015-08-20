@@ -10,7 +10,7 @@ Dashboard:
 
 Soon to be a dashboard to serve as an interface between my Raspberry Pi Security Camera, the lighting, air conditioning, and blinds in the Macon House (my house) for us to use Senior Year.
 
-I want a way to control the utilities in my room over the web. These include Phillip Hue lightbulbs, Samsung SMART air conditioning unit, and a ethernet-connected motor to close and open the blinds. The ultimate goal is for this to be a "dashboard" with buttons allowing me to interact with these devices via a closed network and various APIs. 
+This will allow us to control utilities in my room/our house over the web. These include Phillip Hue lightbulbs, Raspberry Pi Security Cameras, Netgear Arlo Security Cameras, and a ethernet-connected motor to close and open the blinds. The ultimate goal is for this to be a "dashboard" with buttons allowing me to interact with these devices via a closed network and various APIs. 
 
 Why PHP?
 
@@ -86,7 +86,7 @@ Finally, commit your project:
 5) `$ git commit -m 'new_commit_message'`
 
 
-6) `$git push heroku master`
+6) `$ git push heroku master`
 
 
 
