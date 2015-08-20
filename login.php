@@ -15,8 +15,6 @@
 // Turn off errors
 //error_reporting(E_ERROR);
 
-ob_start();
-
 $uname = "";
 $pword = "";
 $errorMessage = "";
@@ -120,7 +118,7 @@ require('header/header.php');
 					  </div>
 					  <input class="button" type="submit" name="Submit1" value="Login">
 				</form>	
-				<p style="margin-top:5px;"> <?php if($errorMessage) { echo $errorMessage; } ?> </p>		
+				<p style="margin-top:5px;"><?php if($errorMessage) { echo $errorMessage; } ?></p>		
 			</div>
 
 			<div class="col-md-4"></div>
