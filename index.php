@@ -87,9 +87,9 @@ require('header/header.php');
 				  <div class="panel-body">
 				  	<p>Grant's Room</p>
 				  	<div class="container-fluid">
+				  		<!-- Live feed of the security camera using mjpg o-->
 				  		<img class="img-responsive" src="http://192.168.1.13:9000/?action=stream"/>
 				  	</div>
-				  	<!-- <div id="securityCameraFootage"></div> -->
 				  </div>
 				</div>
 			  </div>
