@@ -8,3 +8,6 @@
 *.csr
 *.crt
 *.key
+
+# Composer #
+/vendor/
