@@ -10,7 +10,7 @@
 */
 
 $(document).ready(function(){
-	var base_url = "//192.168.1.13:5000";
+	var base_url = "http://localhost:5000";//"//192.168.1.13:5000";
 
 	/**** On page load, get current dashboard values ****/
 	var dashboard = {
@@ -117,6 +117,7 @@ $(document).ready(function(){
 		var error_set = false;
 
 		function changeLightState(_state) {
+			console.log("Here");
 			state = convertLightState(_state);
 
 			$.ajax({

@@ -140,6 +140,11 @@ footer {
     margin: 0 auto;
 }
 
+#security-feed {
+	max-height: 290px !important;
+    margin: 0 auto;
+}
+
 /****** BOOTSTRAP OVERRIDES *******/
 
 .panel {

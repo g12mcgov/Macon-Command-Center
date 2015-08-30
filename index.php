@@ -88,7 +88,7 @@ require('header/header.php');
 				  	<p>Grant's Room</p>
 				  	<div class="container-fluid">
 				  		<!-- Live feed of the security camera using mjpg o-->
-				  		<img class="img-responsive" src="http://192.168.1.13:9000/?action=stream"/>
+				  		<img id="security-feed" class="img-responsive" src="https://pjmzqgys.p6.weaved.com/?action=stream"/>
 				  	</div>
 				  </div>
 				</div>
