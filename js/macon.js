@@ -10,7 +10,7 @@
 */
 
 $(document).ready(function(){
-	var base_url = "http://localhost:5000";//"//192.168.1.13:5000";
+	var base_url = "//macon-command-center-api.ngrok.io";//"//192.168.1.13:5000";
 
 	/**** On page load, get current dashboard values ****/
 	var dashboard = {
@@ -41,7 +41,8 @@ $(document).ready(function(){
 				dashboard["lights"]["state"] = res["state"];
 				// TODO: Look into deactivating until ajax load is done.
 				// If the recieved state differs from the one displayed, change it.
-				if(convertLightState(res["state"]) != $('#light').bootstrapSwitch('state')) {
+				// Normalize both responses by sending them through convertLightState() method
+				if(convertLightState(res["state"]) != convertLightState($('#light').bootstrapSwitch('state'))) {
 					$('#light').bootstrapSwitch('toggleState', true, true);
 				}
 			}
