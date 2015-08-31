@@ -184,9 +184,7 @@ $(document).ready(function(){
 	    		error: function(XMLHttpRequest, textStatus, errorThrown) {
 	    			// Append error to the state button
 	    			if(!error_set) {
-	    				$(".blind-switches").after( 
-	    					"<p style='color:red;'>Error, could not execute command for side blinds.</p>"
-	    				);
+	    				displayError('.blind-switches');
 	    				error_set = true;
 	    			}
 	    		},
@@ -211,9 +209,7 @@ $(document).ready(function(){
 	    		error: function(XMLHttpRequest, textStatus, errorThrown) {
 	    			// Append error to the state button
 	    			if(!error_set) {
-	    				$(".light-switch").after( 
-	    					"<p style='color:red;'>Error, could not execute command.</p>"
-	    				);
+	    				displayError('.light-switch');
 	    				error_set = true;
 	    			}
 	    		},
@@ -240,4 +236,18 @@ $(document).ready(function(){
 		else
 			return false;
     };
+
+    function displayError(element) {
+    	$(element).after(
+    		"<p id='error-text' style='color:red;'>Error, could not execute command.</p>"
+    		);
+    };
+
+    function cleanError() {
+    	$('#error-text').each(function() {
+    		$('#error-text').fadeOut().empty();
+    	});
+    }
+
+    setTimeout(cleanError, 5000);
 });

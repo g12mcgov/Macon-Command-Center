@@ -88,7 +88,7 @@ require('header/header.php');
 				  	<p>Grant's Room</p>
 				  	<div class="container-fluid">
 				  		<!-- Live feed of the security camera using mjpg o-->
-				  		<img id="security-feed" class="img-responsive" src="http://macon-command-center-vid.ngrok.io/?action=stream"/>
+				  		<img id="security-feed" class="img-responsive" src="//macon-command-center-vid.ngrok.io/?action=stream"/>
 				  	</div>
 				  </div>
 				</div>
