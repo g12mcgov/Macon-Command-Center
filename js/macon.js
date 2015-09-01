@@ -118,7 +118,6 @@ $(document).ready(function(){
 		var error_set = false;
 
 		function changeLightState(_state) {
-			console.log("Here");
 			state = convertLightState(_state);
 
 			$.ajax({
