@@ -249,4 +249,26 @@ $(document).ready(function(){
     }
 
     setTimeout(cleanError, 5000);
+
+    /* Custom theme handling */
+    $('.custom-lighting-theme').on('click', function() {
+    	var theme = $(this).data("theme");
+    	$.ajax({
+    		url: base_url + '/lights/' + theme,
+    		dataType: 'JSONP',
+    		jsonpCallback: 'callback',
+    		type: 'POST',
+    		timeout: 5000,
+    		error: function(XMLHttpRequest, textStatus, errorThrown) {
+    			// Append error to the state button
+    			if(!error_set) {
+    				//displayError('.light-switch');
+    				error_set = true;
+    			}
+    		},
+    		success: function(data) {
+        		if(DEBUG) console.log(data);
+    		}
+		});
+    });
 });

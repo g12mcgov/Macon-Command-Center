@@ -85,36 +85,32 @@ require('header/header.php');
 							      	<div class="container-fluid">
 								        <div class="row">
 								        	<div class="col-xs-3">
-								        		Test
+								        		<a class="custom-lighting-theme" href="#" data-theme="party">
+								        			<img class="img-responsive" src="img/party.png">
+								        			<h5>Party</h5>
+								        		<a>
 								        	</div>
 								        	<div class="col-xs-3">
-								        		Test
+								        		<a class="custom-lighting-theme" href="#" data-theme="strobe">
+								        			<img class="img-responsive" src="img/strobe.gif">
+								        			<h5>Strobe</h5>
+								        		<a>
 								        	</div>
 								        	<div class="col-xs-3">
-								        		Test
+								        		<a class="custom-lighting-theme" href="#" data-theme="police">
+								        			<img class="img-responsive" src="img/police.gif">
+								        			<h5>Police</h5>
+								        		<a>
 								        	</div>
 								        	<div class="col-xs-3">
-								        		Test
+								        		<a class="custom-lighting-theme" href="#" data-theme="allon">
+								        			<img class="img-responsive" src="img/warm.png">
+								        			<h5>All On Warm</h5>
+								        		<a>
 								        	</div>
 								        </div>
 								    </div>
 							      </div>
-							      <div class="container-fluid">
-								      <div class="row">
-								        	<div class="col-xs-3">
-								        		Test
-								        	</div>
-								        	<div class="col-xs-3">
-								        		Test
-								        	</div>
-								        	<div class="col-xs-3">
-								        		Test
-								        	</div>
-								        	<div class="col-xs-3">
-								        		Test
-								        	</div>
-								        </div>
-								    </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
 							      </div>
