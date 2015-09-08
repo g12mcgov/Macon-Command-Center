@@ -109,6 +109,11 @@ $(document).ready(function(){
 			changeSideBlindPosition(position);
 		});
 
+		/* Listen for blind adjustment */
+		$('#side-blinds-adjustment').on('click', function(event, command) {
+			adjustSideBlindPosition(command);
+		});
+
 		/**** Color Change ****/
 		/* Listen for change of light color */
 		$('#cpDiv2').on('change.color', function(event, color) {
@@ -192,6 +197,28 @@ $(document).ready(function(){
 	    		}
 			});
 		};
+
+		function adjustSideBlindPosition(_command) {
+			command = (_command) ? "forward" : "backward";
+
+			$.ajax({
+	    		url: base_url + '/blinds/side/adjust' + command,
+	    		dataType: 'JSONP',
+	    		jsonpCallback: 'command',
+	    		type: 'GET',
+	    		timeout: 5000,
+	    		error: function(XMLHttpRequest, textStatus, errorThrown) {
+	    			// Append error to the state button
+	    			if(!error_set) {
+	    				displayError('.blind-switches');
+	    				error_set = true;
+	    			}
+	    		},
+	    		success: function(data) {
+	        		if(DEBUG) { console.log(data) };
+	    		}
+			});
+		}; 
 
 		var error_set = false;
 
