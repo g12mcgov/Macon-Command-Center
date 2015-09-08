@@ -255,7 +255,7 @@ $(document).ready(function(){
     $('.custom-lighting-theme').on('click', function() {
     	var theme = $(this).data("theme");
     	$.ajax({
-    		url: base_url + '/lights/theme' + theme,
+    		url: base_url + '/lights/theme/' + theme,
     		dataType: 'JSONP',
     		jsonpCallback: 'callback',
     		type: 'POST',
