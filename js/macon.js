@@ -38,13 +38,14 @@ $(document).ready(function(){
 			timeout: 10000,
 			success: function(res) {
 				if(DEBUG) { console.log("Success: ", res["state"]) };
-				console.log("Switch", $('#light').bootstrapSwitch('state'));
+				console.log("Pi", convertLightState(res["state"]));
+				console.log("Switch", convertLightState($('#light').bootstrapSwitch('state')));
 				dashboard["lights"]["state"] = res["state"];
 				// TODO: Look into deactivating until ajax load is done.
 				// If the recieved state differs from the one displayed, change it.
 				// Normalize both responses by sending them through convertLightState() method
 				if(convertLightState(res["state"]) != convertLightState($('#light').bootstrapSwitch('state'))) {
-					$('#light').bootstrapSwitch('toggleState', true, true);
+					$('#light').bootstrapSwitch('toggleState', false, false);
 				}
 			}
 		}),
