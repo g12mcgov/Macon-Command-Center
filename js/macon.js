@@ -250,11 +250,12 @@ $(document).ready(function(){
 
     setTimeout(cleanError, 5000);
 
+    var error_set = false;
     /* Custom theme handling */
     $('.custom-lighting-theme').on('click', function() {
     	var theme = $(this).data("theme");
     	$.ajax({
-    		url: base_url + '/lights/' + theme,
+    		url: base_url + '/lights/theme' + theme,
     		dataType: 'JSONP',
     		jsonpCallback: 'callback',
     		type: 'POST',
