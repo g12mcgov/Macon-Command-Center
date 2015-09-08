@@ -202,7 +202,7 @@ $(document).ready(function(){
 			command = (_command) ? "forward" : "backward";
 
 			$.ajax({
-	    		url: base_url + '/blinds/side/adjust' + command,
+	    		url: base_url + '/blinds/side/adjust/' + command,
 	    		dataType: 'JSONP',
 	    		jsonpCallback: 'command',
 	    		type: 'GET',
