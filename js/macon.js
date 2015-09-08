@@ -10,7 +10,7 @@
 */
 
 $(document).ready(function(){
-	var base_url = "//macon-command-center-api.ngrok.io";//"//192.168.1.13:5000";
+	var base_url = "//macon-command-center-api.ngrok.io"; //"//raspberrypi.local:5000";
 
 	/**** On page load, get current dashboard values ****/
 	var dashboard = {
@@ -38,6 +38,7 @@ $(document).ready(function(){
 			timeout: 10000,
 			success: function(res) {
 				if(DEBUG) { console.log("Success: ", res["state"]) };
+				console.log("Switch", $('#light').bootstrapSwitch('state'));
 				dashboard["lights"]["state"] = res["state"];
 				// TODO: Look into deactivating until ajax load is done.
 				// If the recieved state differs from the one displayed, change it.

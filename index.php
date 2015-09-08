@@ -68,6 +68,60 @@ require('header/header.php');
 					  		<input type="checkbox" id="light" data-off-text="Off" data-on-text="On" checked>
 					  	</div>
 						<div id="cpDiv2" style="display:inline-block;"></div>
+						<div class="lighting-schemes">
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">
+							  Lighting Themes
+							</button>
+							<!-- Modal -->
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" id="myModalLabel">Lighting Themes</h4>
+							      </div>
+							      <div class="modal-body">
+							      	<div class="container-fluid">
+								        <div class="row">
+								        	<div class="col-xs-3">
+								        		Test
+								        	</div>
+								        	<div class="col-xs-3">
+								        		Test
+								        	</div>
+								        	<div class="col-xs-3">
+								        		Test
+								        	</div>
+								        	<div class="col-xs-3">
+								        		Test
+								        	</div>
+								        </div>
+								    </div>
+							      </div>
+							      <div class="container-fluid">
+								      <div class="row">
+								        	<div class="col-xs-3">
+								        		Test
+								        	</div>
+								        	<div class="col-xs-3">
+								        		Test
+								        	</div>
+								        	<div class="col-xs-3">
+								        		Test
+								        	</div>
+								        	<div class="col-xs-3">
+								        		Test
+								        	</div>
+								        </div>
+								    </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+						</div>
 					</div>
 					<script>
 						$(document).ready(function(){
