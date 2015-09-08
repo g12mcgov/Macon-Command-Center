@@ -110,7 +110,8 @@ $(document).ready(function(){
 		});
 
 		/* Listen for blind adjustment */
-		$('#side-blinds-adjustment').on('click', function(event, command) {
+		$('.side-blinds-adjuster').find("span").on('click', function(event) {
+			var command = $(this).data("command");
 			adjustSideBlindPosition(command);
 		});
 

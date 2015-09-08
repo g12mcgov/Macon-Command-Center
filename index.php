@@ -152,11 +152,12 @@ require('header/header.php');
 				  	<div class="blind-switches">
 				  		<p>Backyard Blinds</p>
 				  		<input type="checkbox" id="backyard-blinds" data-off-text="Close" data-on-text="Open" checked>
-				 		<div class="sideblind-adjuster">
-				 			<span id="side-blinds-adjustment" class="glyphicon glyphicon-chevron-right"></span>
-				 		</div>
 				    	<p>Side Blinds</p>
 				    	<input type="checkbox" id="side-blinds" data-off-text="Close" data-on-text="Open" checked>
+				    	<div class="side-blinds-adjuster">
+				    		<span id="side-blinds-adjustment-backward" class="glyphicon glyphicon-chevron-left" data-command="backward"></span>
+				 			<span id="side-blinds-adjustment-forward" class="glyphicon glyphicon-chevron-right" data-command="forward"></span>
+				 		</div>
 				  		</div>
 				    <script>
 				    	$(document).ready(function(){
