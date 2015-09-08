@@ -257,8 +257,8 @@ $(document).ready(function(){
     	$.ajax({
     		url: base_url + '/lights/theme/' + theme,
     		dataType: 'JSONP',
-    		jsonpCallback: 'callback',
-    		type: 'POST',
+    		jsonpCallback: 'theme',
+    		type: 'GET',
     		timeout: 5000,
     		error: function(XMLHttpRequest, textStatus, errorThrown) {
     			// Append error to the state button
